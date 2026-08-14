@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borang Permohonan Ahli BIJAK 2026</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f4f6f9;
+            --border-color: #ccc;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .form-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header .doc-id {
+            text-align: right;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .header h2 {
+            margin: 5px 0;
+            color: var(--primary-color);
+            font-size: 1.3em;
+        }
+
+        .header p {
+            margin: 2px 0;
+            font-size: 0.9em;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.95em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+        }
+
+        .three-cols {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        table.interactive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table.interactive-table th, 
+        table.interactive-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: left;
+        }
+
+        table.interactive-table th {
+            background-color: var(--secondary-color);
+            font-size: 0.85em;
+        }
+
+        table.interactive-table input {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .info-box {
+            background-color: #e7f1ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 0.9em;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .checkbox-group input {
+            margin-top: 4px;
+            width: auto;
+        }
+
+        .note-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.85em;
+        }
+
+        .note-box ol {
+            margin: 5px 0 0 20px;
+            padding: 0;
+        }
+
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid, .three-cols {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="header">
+        <div class="doc-id">BORANG 2 (Pin.2023)</div>
+        <h2>BADAN IHSAN ANGGOTA PENDIDIK KELANTAN (BIJAK)</h2>
+        <p>JABATAN PENDIDIKAN NEGERI KELANTAN</p>
+        <p>ARAS 1, BLOK B, BANGUNAN PERSEKUTUAN, JALAN DOKTOR, 15000 KOTA BHARU, KELANTAN.</p>
+        <p><small>(Nombor Pendaftaran : PPM-011-03-18111999)</small></p>
+    </div>
+
+    <div class="form-title">BORANG PERMOHONAN MENJADI AHLI</div>
+
+    <!-- UPDATE THIS FORM ACTION URL TO YOUR FORMSPREE / BACKEND ENDPOINT -->
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+
+        <div class="section-header">BAHAGIAN A: BUTIR-BUTIR DIRI PEMOHON</div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="nama">1. Nama Full (seperti dalam IC):</label>
+                <input type="text" id="nama" name="Nama Pemohon" required placeholder="Contoh: AHMAD BIN ABDULLAH">
+            </div>
+
+            <div class="form-group">
+                <label for="angka_pej">Angka Pejabat:</label>
+                <input type="text" id="angka_pej" name="Angka Pejabat" placeholder="Nombor Angka Pejabat">
+            </div>
+
+            <div class="form-group">
+                <label for="ic_no">2. Nombor Kad Pengenalan (Baru):</label>
+                <input type="text" id="ic_no" name="No KP" required placeholder="YYMMDD-SS-####">
+            </div>
+
+            <div class="form-group">
+                <label for="tarikh_lahir">3. Tarikh Lahir:</label>
+                <input type="date" id="tarikh_lahir" name="Tarikh Lahir" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="tarikh_mula_kelantan">Tarikh Mula Berkhidmat di Kelantan:</label>
+                <input type="date" id="tarikh_mula_kelantan" name="Tarikh Mula Berkhidmat di Kelantan">
+            </div>
+
+            <div class="form-group">
+                <label for="jawatan">4. Nama Jawatan:</label>
+                <input type="text" id="jawatan" name="Jawatan" placeholder="Contoh: Pegawai Perkhidmatan Pendidikan">
+            </div>
+
+            <div class="form-group">
+                <label for="gred">Gred:</label>
+                <input type="text" id="gred" name="Gred" placeholder="Contoh: DG41 / DG44">
+            </div>
+
+            <div class="form-group full-width three-cols">
+                <div>
+                    <label for="keturunan">5. Keturunan:</label>
+                    <input type="text" id="keturunan" name="Keturunan" placeholder="Melayu / Lain-lain">
+                </div>
+                <div>
+                    <label for="agama">Agama:</label>
+                    <input type="text" id="agama" name="Agama" placeholder="Islam / Lain-lain">
+                </div>
+                <div>
+                    <label for="negeri_asal">Negeri Asal:</label>
+                    <input type="text" id="negeri_asal" name="Negeri Asal" placeholder="Kelantan / dll">
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="alamat_sekolah">6. Alamat Sekolah / Tempat Bertugas:</label>
+                <textarea id="alamat_sekolah" name="Alamat Sekolah" rows="2" placeholder="Alamat penuh tempat bertugas"></textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="tel_sekolah">No. Telefon (Sekolah/Tempat Bertugas):</label>
+                <input type="tel" id="tel_sekolah" name="No Tel Sekolah" placeholder="09-XXXXXXX">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="alamat_rumah">7. Alamat Rumah:</label>
+                <textarea id="alamat_rumah" name="Alamat Rumah" rows="2" placeholder="Alamat kediaman penuh"></textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="tel_rumah">No. Telefon (Rumah/Bimbit):</label>
+                <input type="tel" id="tel_rumah" name="No Tel Rumah" required placeholder="01X-XXXXXXX">
+            </div>
+
+            <div class="form-group">
+                <label for="nama_pasangan">8. Nama Isteri / Suami:</label>
+                <input type="text" id="nama_pasangan" name="Nama Pasangan" placeholder="Nama pasangan jika ada">
+            </div>
+
+            <div class="form-group">
+                <label for="pekerjaan_pasangan">9. Pekerjaan Isteri / Suami:</label>
+                <input type="text" id="pekerjaan_pasangan" name="Pekerjaan Pasangan">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="alamat_pasangan">10. Alamat Tempat Bertugas (Suami / Isteri) jika bekerja:</label>
+                <textarea id="alamat_pasangan" name="Alamat Tempat Kerja Pasangan" rows="2"></textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="tel_pasangan">No. Telefon (Suami / Isteri):</label>
+                <input type="tel" id="tel_pasangan" name="No Tel Pasangan">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="emel">E-mel Pemohon:</label>
+                <input type="email" id="emel" name="Emel Pemohon" required placeholder="contoh@email.com">
+            </div>
+        </div>
+
+        <div class="form-group full-width" style="margin-top: 15px;">
+            <label>11. Penama / Penama-penama:</label>
+            <table class="interactive-table">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">BIL</th>
+                        <th style="width: 45%;">NAMA</th>
+                        <th style="width: 30%;">NO. KP / NO. SB</th>
+                        <th style="width: 20%;">HUBUNGAN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td><input type="text" name="Penama 1 Nama"></td>
+                        <td><input type="text" name="Penama 1 IC/SB"></td>
+                        <td><input type="text" name="Penama 1 Hubungan"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td><input type="text" name="Penama 2 Nama"></td>
+                        <td><input type="text" name="Penama 2 IC/SB"></td>
+                        <td><input type="text" name="Penama 2 Hubungan"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td><input type="text" name="Penama 3 Nama"></td>
+                        <td><input type="text" name="Penama 3 IC/SB"></td>
+                        <td><input type="text" name="Penama 3 Hubungan"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">4</td>
+                        <td><input type="text" name="Penama 4 Nama"></td>
+                        <td><input type="text" name="Penama 4 IC/SB"></td>
+                        <td><input type="text" name="Penama 4 Hubungan"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <strong>12. Maklumat Yuran & Pembayaran:</strong><br>
+            Jumlah Yuran: <strong>RM 110.00</strong> (Yuran Masuk RM 10.00, Yuran Tahunan RM 2.00 & Sumbangan Kematian RM 98.00).<br>
+            Akaun Pembayaran: <strong>BANK ISLAM - 03036010006550</strong> (BADAN IHSAN ANGGOTA PENDIDIK KELANTAN).
+        </div>
+
+        <div class="form-group full-width">
+            <label for="bukti_bayaran">Muat Naik Bukti Transaksi / Resit Pembayaran:</label>
+            <input type="file" id="bukti_bayaran" name="Resit Bayaran" accept="image/*,.pdf">
+        </div>
+
+        <div class="section-header">BAHAGIAN B: CADANGAN DAN SOKONGAN</div>
+
+        <div class="form-grid">
+            <div class="form-group full-width">
+                <strong>1. PENCADANG</strong>
+            </div>
+            <div class="form-group">
+                <label for="pencadang_nama">Nama Pencadang:</label>
+                <input type="text" id="pencadang_nama" name="Nama Pencadang">
+            </div>
+            <div class="form-group">
+                <label for="pencadang_ic">No. Kad Pengenalan:</label>
+                <input type="text" id="pencadang_ic" name="No IC Pencadang">
+            </div>
+            <div class="form-group">
+                <label for="pencadang_no_ahli">Nombor Ahli:</label>
+                <input type="text" id="pencadang_no_ahli" name="No Ahli Pencadang">
+            </div>
+            <div class="form-group">
+                <label for="pencadang_alamat">Alamat:</label>
+                <input type="text" id="pencadang_alamat" name="Alamat Pencadang">
+            </div>
+
+            <div class="form-group full-width" style="margin-top: 10px;">
+                <strong>2. PENYOKONG</strong>
+            </div>
+            <div class="form-group">
+                <label for="penyokong_nama">Nama Penyokong:</label>
+                <input type="text" id="penyokong_nama" name="Nama Penyokong">
+            </div>
+            <div class="form-group">
+                <label for="penyokong_ic">No. Kad Pengenalan:</label>
+                <input type="text" id="penyokong_ic" name="No IC Penyokong">
+            </div>
+            <div class="form-group">
+                <label for="penyokong_no_ahli">Nombor Ahli:</label>
+                <input type="text" id="penyokong_no_ahli" name="No Ahli Penyokong">
+            </div>
+            <div class="form-group">
+                <label for="penyokong_alamat">Alamat:</label>
+                <input type="text" id="penyokong_alamat" name="Alamat Penyokong">
+            </div>
+        </div>
+
+        <div class="section-header">13. PENGESAHAN AHLI</div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="pengesahan" name="Pengesahan Syarat" required>
+            <label for="pengesahan">
+                Saya dengan ini mengesahkan memohon untuk menjadi Ahli Badan Ihsan Anggota Pendidik Kelantan. Saya akan mematuhi segala peraturan dan undang-undang yang termaktub dalam Perlembagaan dan Undang-undang Tubuh Badan Ihsan ini. Saya dengan redha dan ikhlas hati akan memberi sumbangan apabila berlaku kematian ahli.
+            </label>
+        </div>
+
+        <div class="note-box">
+            <strong>Catatan Penting:</strong>
+            <ol>
+                <li>Isi dalam dua salinan jika diserah secara fizikal.</li>
+                <li>Hantar ke Urusetia Badan Ihsan, JPN Kelantan.</li>
+                <li>Sertakan salinan Surat Pelantikan / Pertukaran dan Kad Pengenalan.</li>
+                <li>Bayaran hendaklah dikreditkan ke akaun Bank Islam (03036010006550). Bayaran TUNAI tidak diterima.</li>
+            </ol>
+        </div>
+
+        <button type="submit" class="btn-submit">HANTAR PERMOHONAN ONLINE</button>
+
+    </form>
+</div>
+
+</body>
+</html>
