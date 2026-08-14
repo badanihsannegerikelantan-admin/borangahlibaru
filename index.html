@@ -200,6 +200,11 @@
             background-color: #218838;
         }
 
+        .colorred (
+
+            font-color: red;
+        }
+
         @media (max-width: 600px) {
             .form-grid, .three-cols {
                 grid-template-columns: 1fr;
@@ -230,7 +235,7 @@
 
         <div class="form-grid">
             <div class="form-group">
-                <label for="nama">1. Nama Full (seperti dalam IC):</label>
+                <label for="nama">1. Nama Full (seperti dalam IC):<div class="colorred">*</div> </label>
                 <input type="text" id="nama" name="Nama Pemohon" required placeholder="Contoh: AHMAD BIN ABDULLAH">
             </div>
 
